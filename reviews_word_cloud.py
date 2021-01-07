@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Reads 'Youtube04-Eminem.csv' file
-df = pd.read_csv(r"Youtube04-Eminem.csv")
+df = pd.read_csv(r"worksheet2.csv")
 
 comment_words = ''
 stopwords = set(STOPWORDS)
 
 # iterate through the csv file
-for val in df.CONTENT:
+for val in df['Subject']:
 
     # typecaste each val to string
     val = str(val)
@@ -32,6 +32,8 @@ wordcloud = WordCloud(width=800, height=800,
                       min_font_size=10).generate(comment_words)
 
 # plot the WordCloud image
+
+
 plt.figure(figsize=(8, 8), facecolor=None)
 plt.imshow(wordcloud)
 plt.axis("off")
